@@ -1,0 +1,197 @@
+/*
+  https://developer.mozilla.org/en/docs/Web/CSS/box-shadow
+  box-shadow: [inset?] [top] [left] [blur] [size] [color];
+
+  Tips:
+    - We're setting all the blurs to 0 since we want a solid fill.
+    - Add the inset keyword so the box-shadow is on the inside of the element
+    - Animating the inset shadow on hover looks like the element is filling in from whatever side you specify ([top] and [left] accept negative values to become [bottom] and [right])
+    - Multiple shadows can be stacked
+    - If you're animating multiple shadows, be sure to keep the same number of shadows so the animation is smooth. Otherwise, you'll get something choppy.
+*/
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+.pulse:hover,
+.pulse:focus {
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+.close:hover,
+.close:focus {
+  box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+}
+
+
+.dialog {
+  color: #BEEAE6;
+  letter-spacing: 0.03em;
+  position: absolute;
+  z-index: 200;
+  text-align: right;
+  opacity: 0.7;
+  margin-top: -80px;
+  margin-left: 585px;
+  width: 180px;
+}
+
+.dialog h3 {
+  margin-bottom: 10px;
+}
+
+.dialog p {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.dialog p.smaller {
+  font-size: 14px;
+  line-height: 1.25em;
+}
+
+.dialog {
+  visibility: hidden;
+}
+
+.sub {
+  font-size: 60%;
+  vertical-align: sub;
+}
+
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  -webkit-transform: translateY(-0.25em);
+          transform: translateY(-0.25em);
+}
+
+.up:hover,
+.up:focus {
+  box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 6.5em 0 0 0 var(--hover);
+}
+
+.offset {
+  box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+}
+.offset:hover, .offset:focus {
+  box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
+
+.fill {
+  --color: #a972cb;
+  --hover: #cb72aa;
+}
+
+.pulse {
+  --color: #ef6eae;
+  --hover: #ef8f6e;
+}
+
+.close {
+  --color: #ff7f82;
+  --hover: #ffdc7f;
+}
+
+.raise {
+  --color: #ffa260;
+  --hover: #e5ff60;
+}
+
+.up {
+  --color: #e4cb58;
+  --hover: #94e458;
+}
+
+.slide {
+  --color: #8fc866;
+  --hover: #66c887;
+}
+
+.offset {
+  --color: #19bc8b;
+  --hover: #1973bc;
+}
+
+button {
+  color: var(--color);
+  transition: 0.25s;
+}
+button:hover, button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+body {
+  color: #fff;
+  background: #141E30;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font: 300 1em 'Fira Sans', sans-serif;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+code {
+  color: #e4cb58;
+  font: inherit;
+}
+
+#slider {
+  opacity: 0.6;
+  position: absolute;
+  margin: 540px auto 50px;
+  display: table;
+  z-index: 510;
+  width: 510px;
+  height: 8px;
+  background: white;
+  border: 1px solid white;
+}
+
+.ui-slider-handle {
+  border-radius: 2px;
+  background: #7A9293;
+  position: absolute;
+  display: block;
+  margin-top: -3px;
+  width: 14px;
+  height: 14px;
+  outline: none;
+}
