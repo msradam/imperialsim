@@ -38,6 +38,6 @@ def find_countries(text):
 				ent.append(j["text"])
 	return ent
 
-sentence = "Franco-Prussian War"
+sentence = "Uprising in Serbia against the presence of the Ottoman Empire"
 print(find_countries(sentence))
 
