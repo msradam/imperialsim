@@ -17,9 +17,9 @@ def get_info(wiki_title):
 			year = int(year)
 			if year >= 1492:
 				event_info["year"] = year
-				description = event.text[6:]
+				description = event.text
 
-				
+
 
 				event_info["description"] = description
 				events.append(event_info)
