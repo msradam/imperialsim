@@ -1,5 +1,6 @@
 import wikipedia
 from bs4 import BeautifulSoup
+import country
 
 
 def get_info(wiki_title):
@@ -18,10 +19,15 @@ def get_info(wiki_title):
 			if year >= 1492:
 				event_info["year"] = year
 				description = event.text
-
-
-
 				event_info["description"] = description
+				try:
+					event_info["countries"] = country.find_countries(description)
+					event_info["sentiment"] = country.find_sentiment(description)
+					print(year),
+					print(country.find_sentiment(description))
+				except:
+					continue
+				#print(event_info)
 				events.append(event_info)
 	return events
 
