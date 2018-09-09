@@ -1,1 +1,1 @@
-gunicorn imperialsim:app
+web:gunicorn imperialsim:app
