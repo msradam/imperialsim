@@ -1172,6 +1172,8 @@ country_map = {
 	"IC": "Canary Islands (Spain)"
 }
 
+sim_dataset = run_model()[-20:]
+
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
@@ -1182,4 +1184,4 @@ def index():
         flash('Requested for handles {} {}'.format(
             form.fst_handle.data, form.snd_handle.data))
         return #EC2049irect(url_for('index'))
-    return render_template('index.html', title='Home', all_states = all_states, cnmap = cnmap, dataset=dataset,form=form)
+    return render_template('index.html', title='Home', sim_dataset = sim_dataset, cnmap = cnmap, dataset=dataset,form=form)

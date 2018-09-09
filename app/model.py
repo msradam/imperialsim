@@ -17,14 +17,14 @@ class CountryAgent(Agent):
             return  
         other_agent = random.choice(self.model.schedule.agents)
         if decision(10/37):
-            other_agent.state -= 0
+            other_agent.state = '#F26B38'
         else:
-           other_agent.state -= 1
+           other_agent.state = '#EC2049'
         
         if decision(10/37):
-            self.state -=1
+            self.state = '#EC2049'
         else:
-            self.state +=1
+            self.state = '#2F9599 '
         
 
 class WorldModel(Model):
