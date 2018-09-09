@@ -64,6 +64,7 @@
   line-height: 1.25em;
 }
 
+
 .dialog {
   visibility: hidden;
 }
@@ -143,10 +144,11 @@ button:hover, button:focus {
 
 body {
   color: #fff;
+  background-image: {{ url_for('static', 'img/cream_pixels.png')}};
   background: #141E30;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font: 300 1em 'Fira Sans', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -166,32 +168,10 @@ button {
 
 h1 {
   font-weight: 400;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 code {
   color: #e4cb58;
   font: inherit;
-}
-
-#slider {
-  opacity: 0.6;
-  position: absolute;
-  margin: 540px auto 50px;
-  display: table;
-  z-index: 510;
-  width: 510px;
-  height: 8px;
-  background: white;
-  border: 1px solid white;
-}
-
-.ui-slider-handle {
-  border-radius: 2px;
-  background: #7A9293;
-  position: absolute;
-  display: block;
-  margin-top: -3px;
-  width: 14px;
-  height: 14px;
-  outline: none;
 }
