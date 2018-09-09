@@ -23,8 +23,6 @@ def get_info(wiki_title):
 				try:
 					event_info["countries"] = country.find_countries(description)
 					event_info["sentiment"] = country.find_sentiment(description)
-					print(year),
-					print(country.find_sentiment(description))
 				except:
 					continue
 				#print(event_info)
